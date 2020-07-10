@@ -6,7 +6,7 @@
 
 ESP8266_Tones::ESP8266_Tones(int _pin)
 {
-  pinMode(_pin, OUTPUT);
+pinMode(_pin, INPUT);
 }
 
 // Tone Generator
@@ -16,8 +16,16 @@ void ESP8266_Tones::Play_Tone(int _pin, int _frequency, int _length) {
   analogWrite(_pin, 512);
   delay(_length);
   analogWrite(_pin, 0);
+  pinMode(_pin, INPUT);
 }
 
+void ESP8266_Tones::Click(int _pin) {
+  Play_Tone(_pin, 8000, 20); 	// Special
+} // End of beep
+
+void ESP8266_Tones::Click_x(int _pin) {
+  Play_Tone(_pin, 10000, 1); 	// Special
+} // End of beep
 
 void ESP8266_Tones::Chirp(int _pin) {
   Play_Tone(_pin, Note_A7, 10); // F6

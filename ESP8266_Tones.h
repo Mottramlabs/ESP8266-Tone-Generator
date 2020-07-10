@@ -20,7 +20,9 @@ class ESP8266_Tones
     ESP8266_Tones(int pin);
     void Play_Tone(int _pin, int _frequency, int _length);
 
-    void Chirp(int _pin);
+    void Click(int _pin);
+    void Click_x(int _pin);
+	void Chirp(int _pin);
     void Bleep(int _pin);
     void Tone_Down(int _pin);
     void Tone_Up(int _pin);
@@ -28,7 +30,7 @@ class ESP8266_Tones
     void Imperial_March(int _pin);
     void Close_Encounters(int _pin);
     void Harry_Potter(int _pin);
-
+    
   private:
     int _pin;
 
